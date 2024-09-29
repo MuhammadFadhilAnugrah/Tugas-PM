@@ -1,0 +1,39 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Masukkan baris pertama (angka dipisahkan oleh spasi):");
+        String[] baris1 = scanner.nextLine().split(" ");
+
+        System.out.println("Masukkan baris kedua (angka dipisahkan oleh spasi):");
+        String[] baris2 = scanner.nextLine().split(" ");
+
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+
+        for (String num : baris1) {
+            set1.add(Integer.parseInt(num));
+        }
+
+        for (String num : baris2) {
+            set2.add(Integer.parseInt(num));
+        }
+
+        System.out.println("Angka-angka yang berbeda antara kedua baris:");
+
+        for (int num : set1) {
+            if (!set2.contains(num)) {
+                System.out.print(num + " ");
+            }
+        }
+
+        for (int num : set2) {
+            if (!set1.contains(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
