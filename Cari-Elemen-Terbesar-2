@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Masukkan beberapa angka yang dipisahkan dengan spasi:");
+        String[] numbers = scanner.nextLine().split(" ");
+
+        int max = Integer.MIN_VALUE;
+
+        for (String num : numbers) {
+            int currentNumber = Integer.parseInt(num);
+            if (currentNumber > max) {
+                max = currentNumber;
+            }
+        }
+
+        System.out.println("Angka terbesar adalah: " + max);
+    }
+}
